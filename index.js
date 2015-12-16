@@ -1,13 +1,10 @@
+var config      = require('./config');
 var initializer = require('./lib/initializer');
-var r           = require('rethinkdb');
+var r           = require('rethinkdbdash')(config.rethinkdb);
 
 
 
-r.connect({ host: 'delphi.website' })
-.then(function(conn) {
-    conn.use('board');
-    initializer(conn, function() {
-        conn.close();
-        process.exit();
-    });
+initializer(function(err, data) {
+    if (err) process.exit(1);
+    else console.log('done'); process.exit();
 });
