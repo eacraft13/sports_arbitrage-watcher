@@ -1,3 +1,3 @@
-var r = require('rethinkdbdash')(require('../config').rethinkdb);
+var r = require('./r');
 
 r.tableCreate('arbitrage');

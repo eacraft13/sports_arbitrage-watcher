@@ -1,6 +1,4 @@
-var config      = require('./config');
 var initializer = require('./lib/initializer');
-var r           = require('rethinkdbdash')(config.rethinkdb);
 
 
 
